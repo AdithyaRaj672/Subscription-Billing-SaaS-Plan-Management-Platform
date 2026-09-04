@@ -17,10 +17,12 @@ app.get('/', (req, res) => {
 // Import Routes
 const authRoutes = require('./src/routes/authRoutes');
 const userRoutes = require('./src/routes/userRoutes');
+const planRoutes = require('./src/routes/planRoutes');
 
 // Mount Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
+app.use('/api/plans', planRoutes);
 
 // Database Connection
 mongoose.connect(process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/saas_billing_p17')
