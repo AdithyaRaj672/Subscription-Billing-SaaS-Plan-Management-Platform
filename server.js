@@ -19,12 +19,14 @@ const authRoutes = require('./src/routes/authRoutes');
 const userRoutes = require('./src/routes/userRoutes');
 const planRoutes = require('./src/routes/planRoutes');
 const subscriptionRoutes = require('./src/routes/subscriptionRoutes');
+const billingRoutes = require('./src/routes/billingRoutes');
 
 // Mount Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/plans', planRoutes);
 app.use('/api/subscriptions', subscriptionRoutes);
+app.use('/api/billing', billingRoutes);
 
 // Database Connection
 mongoose.connect(process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/saas_billing_p17')
